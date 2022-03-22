@@ -1,0 +1,10 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  decimaltobinary:
+    lang: c
+    handler: ./decimaltobinary
+    image: localhost:32000/decimaltobinary:latest
+
