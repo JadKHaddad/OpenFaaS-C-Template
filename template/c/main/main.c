@@ -6,8 +6,11 @@ int main()
 {
     char *line = NULL;
     size_t len = 0;
-    getline(&line, &len, stdin);
-    printf("%s", handle(line));
+    ssize_t lineSize = 0;
+    lineSize = getline(&line, &len, stdin);
+    char* res = handle(line);
+    printf("%s", res);
+    free(res);
     free(line);
     return 0;
 }
