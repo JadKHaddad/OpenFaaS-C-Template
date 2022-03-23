@@ -9,6 +9,10 @@ char* handle(char* req) {
     unsigned long binarynum = decimalToBinary(decimalnum);
     const int n = snprintf(NULL, 0, "%lu", binarynum);
     char* res = (char*) malloc((n+1)*sizeof(char));
+    if (res == NULL)
+    {
+        return res;
+    }
     int c = snprintf(res, n+1, "%lu", binarynum);
     return res;
 }
