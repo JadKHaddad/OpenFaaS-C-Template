@@ -8,7 +8,7 @@ char *handle(char *req)
     res = malloc(sizeof(char) * 5);
     if (res == NULL)
     {
-        return "Error";
+        return res;
     }
     res[0] = 'H';
     res[1] = 'e';
