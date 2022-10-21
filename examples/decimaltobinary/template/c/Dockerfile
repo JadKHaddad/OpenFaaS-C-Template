@@ -23,6 +23,7 @@ COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 RUN chmod +x /usr/bin/fwatchdog
 
 COPY --from=builder /usr/bin/main /usr/bin/main
+RUN chmod +x /usr/bin/main
 
 HEALTHCHECK --interval=5s CMD [ -e /tmp/.lock ] || exit 1
 
