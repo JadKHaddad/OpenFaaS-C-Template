@@ -9,15 +9,13 @@ int main()
     ssize_t lineSize = 0;
     lineSize = getline(&line, &len, stdin);
     char* res = handle(line);
-    if (res != NULL)
-    {
-        printf("%s", res);
-        free(res);
-    }
-    else
+    free(line);
+    if (res == NULL)
     {
         printf("Error");
+        return 1;
     }
-    free(line);
+    printf("%s", res);
+    free(res);
     return 0;
 }
